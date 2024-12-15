@@ -1,0 +1,41 @@
+.small-dialog-button {
+    font-size: 10pt !important;
+    padding: 3px 3px !important;
+    min-width: 50px;
+}
+
+/* Style the title bar for a smaller font size */
+.small-dialog-title .ui-dialog-title {
+    font-size: 10pt; /* Adjust to your preference */
+    font-weight: normal;
+    line-height: 1;
+}
+
+/* Optionally reduce padding in the title bar */
+.small-dialog-title {
+    padding: 2px !important;
+}
+
+.modal-label-input {
+    font-size: 10pt;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.modal-text-input {
+    font-size: 10pt;
+    width: 100%;
+    /* margin-top: 10px; */
+
+}
+.modal-input-table-tr {
+    height: 25px;
+}
+
+/* .ui-dialog,.ui-widget, .ui-widget-content, .ui-corner-all, .foo, .ui-draggable, .ui-resizable {
+    background-color:rgb(236, 236, 236) !important;
+} */
+
+.ui-widget-content, .ui-resizable {
+    background-color:rgb(240, 240, 240) !important;
+}

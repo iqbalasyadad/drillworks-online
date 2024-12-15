@@ -1,0 +1,14 @@
+#app-quick-menu-container {
+    border: 1px solid white;
+    background-color: #dfdfdf;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
+}
+#project-view-select {
+    width: 200px;
+    border-radius: 0pt;
+    font-size: 10pt;
+}

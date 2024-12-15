@@ -1,0 +1,45 @@
+a { text-decoration: none; }
+ul { list-style: none; }
+/* p { margin: 15px 0; } */
+
+#app-container { 
+  display: flex;
+  flex-direction: column;
+}
+#app-header {
+  height: 20px;
+  background-color: #f1efef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-menu-bar-container {
+  background-color: #dfdfdf;
+  padding-left: 5px;
+}
+
+/*  LEVEL ONE https://www.narga.net/sexy-jquery-drop-down-multi-level-menu/ */
+ul.dropdown {
+  position: relative; 
+  z-index: 9; 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+ul.dropdown li { float: left; zoom: 1; background: #dfdfdf; z-index: 9;}
+ul.dropdown a:hover { color: #000; cursor: pointer;}
+ul.dropdown a:active { color: #818181d8;}
+ul.dropdown li a { display: block; padding: 6px 8px; border-right: 1px solid #dfdfdf; color: #222; }
+ul.dropdown li:last-child a { border-right: none; } /* Doesn't work in IE */
+ul.dropdown li.hover, ul.dropdown li:hover { background: #439ff5d8; color: black; position: relative;}
+ul.dropdown li.hover a { color: black; }
+
+/*  LEVEL TWO */
+ul.dropdown ul { width: 220px; visibility: hidden; position: absolute; top: 100%; left: 0; }
+ul.dropdown ul li { font-weight: normal; background: #dfdfdf; color: #000; border-bottom: 1px solid #dfdfdf; float: none; }
+                                    /* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a { border-right: none; width: 100%; display: inline-block; } 
+
+/* LEVEL THREE */
+ul.dropdown ul ul { left: 100%; top: 0; }
+ul.dropdown li:hover > ul { visibility: visible;}

@@ -1,0 +1,61 @@
+#project-tracks-container {
+    border: 1px solid gray;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    height: calc(100% - 90px);
+    right: 0;
+    left: 200px;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .track {
+    width: 10px;
+    height: calc(100% - 30px);
+    border: 2px solid gray;
+    padding: 10px; 
+    resize: horizontal;
+    overflow: auto;
+  }
+  
+  /* Context Menu Styling */
+  .track-context-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: small;
+  }
+  
+  .track-context-menu div {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .track-context-menu div:hover {
+    background-color: #60c0ff;
+  }
+  
+  #track-advanced-menu {
+    position: relative;
+  }
+  
+  #track-advanced-options {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    min-width: 150px;
+  }
+  
+  #track-advanced-menu:hover #track-advanced-options {
+    display: block;
+  }

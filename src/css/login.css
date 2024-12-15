@@ -1,0 +1,90 @@
+#login-app-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: black;
+}
+#login-container {
+    background-color: white;
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#login-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+}
+#login-form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+}
+
+#username-input-container, #password-input-container {
+    border: 1px solid rgb(156, 156, 156);
+    margin-bottom: 20px;
+}
+#username-input-container:focus-within, #password-input-container:focus-within {
+    border: 1px solid rgb(0, 0, 0);
+}
+.password-toggle-icon {
+    cursor: pointer;
+}
+
+label {
+    font-size: 12pt;
+    margin-bottom: 5px;
+}
+#login-username-input,
+#login-password-input {
+    padding: 10px;
+    font-size: 10pt;
+    border: none;
+}
+#login-username-input,
+#login-password-input:focus {
+    outline: none !important;
+}
+.check-password {
+    margin-bottom: 10px;
+}
+.check-password label {
+    margin-top: 5px;
+    font-size: 11pt;
+}
+.check {
+    margin-bottom: 40px;
+}
+.check label {
+    margin-top: 5px;
+    font-size: 11pt;
+}
+button[type="submit"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    color: #fff;
+    background-color: black;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: rgb(37, 37, 37);
+}
+#login-message {
+    margin-bottom: 20px;
+    font-size: 10pt;
+}
