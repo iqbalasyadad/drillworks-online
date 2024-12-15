@@ -3,10 +3,7 @@ import { getSessionProjects, getProjectDataStructure } from '../services/apiServ
 import $ from "jquery";
 import "jquery-ui/ui/widgets/dialog";
 import "jquery-ui/themes/base/all.css";
-// import TreeView from 'react-jstree-table';
 import JsTreeTable from './jsTreeExample.js'
-// import "jstree/dist/jstree.min.js";
-// import "jstree/dist/themes/default/style.min.css";
 
 const LeftSidebar = ( { selectedProject } ) => {
   const [sidebarWidth, setSidebarWidth] = useState(200); // Initial width of sidebar

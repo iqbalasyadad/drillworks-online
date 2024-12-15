@@ -5,18 +5,10 @@ import QuickMenu from "./QuickMenu";
 
 import LeftSidebar from "./LeftSidebar";
 import TracksContainer from "./TracksContainer";
-import "../css/styles.css";
-import "../css/track-styles.css";
-
-
+import "../assets/styles/styles.css";
+import "../assets/styles/track-styles.css";
 
 const DashboardPage = () => {
-  // const [selectedProjectId, setSelectedProjectId] = useState(null);
-  // const [projectName, setProjectName] = useState("");
-  // const handleProjectSelect = (name) => {
-  //   setProjectName(name); // Update the project name
-  //   setSelectedProjectId(projectId);
-  // };
   const [selectedProject, setSelectedProject] = useState(null);
 
   // Callback to update selected project

@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/quick-menu-styles.css";
+import "../assets/styles/quick-menu-styles.css";
 
 
 function QuickMenu() {

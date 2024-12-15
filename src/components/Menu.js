@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-import "../css/menu-bar-styles.css";
+import "../assets/styles/menu-bar-styles.css";
+import '../assets/styles/dialog-box.css';
 
 import 'jquery-ui/ui/widgets/dialog'; // Import dialog widget from jQuery UI
 import 'jquery-ui/themes/base/all.css'; // Import jQuery UI CSS (optional)
-import '../css/dialog-box.css'; // Import jQuery UI CSS (optional)
 
 import { getSessionProjects} from '../services/apiService.js';
 
