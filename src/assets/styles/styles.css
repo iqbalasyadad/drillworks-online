@@ -8,13 +8,37 @@ body {
   font-size: 10pt;
   background-color: #000000;
 } 
+/* Remove default text decorations and list styles */
+a { 
+  text-decoration: none; 
+}
+ul { 
+  list-style: none; 
+}
+/* p { margin: 15px 0; } */
+
+#app-container { 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styles */
+#app-header {
+  height: 20px;
+  background-color: #f1efef;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 9pt;
+}
 
 #sidebar-container {
   border: 1px solid rgb(206, 206, 206);
   background-color: rgb(240, 240, 240);
   /* width: 500px; */
   position: absolute;
-  height: calc(100% - 90px);
+  height: calc(100% - 76px);
   /* padding-right: 5px; */
   display: flex;
 }
@@ -86,13 +110,13 @@ body {
   padding: 0px;
   border: 1px solid #ccc;
   border-bottom: none;
-  height: calc(100% - 40px);
+  height: calc(100% - 25px);
   overflow-y: scroll;
 }
 
 
 #jstree .jstree-anchor {
-  font-size: 7pt;  /* Change this value to adjust the text size */
+  font-size: 8pt;  /* Change this value to adjust the text size */
 }
 
 /* Adjust the size of jstree icons */

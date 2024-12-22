@@ -10,8 +10,8 @@
 #login-container {
     background-color: white;
     border: 1px solid black;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,12 +77,16 @@ button[type="submit"] {
     padding: 10px;
     margin-bottom: 20px;
     border: none;
-    color: #fff;
-    background-color: black;
+    color: black;
+    background-color: #cecece;
     cursor: pointer;
 }
 button[type="submit"]:hover {
-    background-color: rgb(37, 37, 37);
+    background-color: #49a2f5;
+}
+button[type="submit"]:active {
+    background-color: #72bbff;
+    color: white;
 }
 #login-message {
     margin-bottom: 20px;

@@ -4,8 +4,10 @@ import "jquery-ui/ui/widgets/dialog";
 import "jquery-ui/themes/base/all.css";
 
 import { getSessionProjects, getWellbores, getWells} from '../services/apiService.js';
+import { useTreeUpdate } from "./TreeUpdateContext";
 
 function DeleteWellboreDialog({ isOpen, onClose }) {
+  const { triggerTreeUpdate } = useTreeUpdate();
 
   const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -67,6 +69,7 @@ function DeleteWellboreDialog({ isOpen, onClose }) {
         throw new Error(result.error || "Failed to delete wellbore");
       }
       console.log(result.message);
+      triggerTreeUpdate();
     } catch (error) {
       console.error("Error:", error);
       alert(error.message);

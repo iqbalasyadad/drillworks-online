@@ -3,9 +3,12 @@ import $ from "jquery";
 import "jquery-ui/ui/widgets/dialog";
 import "jquery-ui/themes/base/all.css";
 import { getSessionProjects, getWells} from '../services/apiService.js';
+import { useTreeUpdate } from "./TreeUpdateContext";
 
 
 function CreateWellboreModal ({ isOpen, onClose }) {
+  
+    const { triggerTreeUpdate } = useTreeUpdate();
   
     const apiUrl = process.env.REACT_APP_API_URL;
     
@@ -135,6 +138,7 @@ function CreateWellboreModal ({ isOpen, onClose }) {
               if (!response.ok) {
                   throw new Error(result.message || "Failed to add well");
               }      
+              triggerTreeUpdate();
               $(this).dialog("close");
               onClose();
               

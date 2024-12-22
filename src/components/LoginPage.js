@@ -68,7 +68,7 @@ const LoginPage = () => {
                         />
                     </div>
 
-                    <button type="submit">Login</button>
+                    <button type="submit"><strong>Sign in</strong></button>
                 </form>
                 {errorMessage && <div>{errorMessage}</div>}
             </div>

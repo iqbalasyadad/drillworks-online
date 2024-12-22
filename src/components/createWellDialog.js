@@ -3,9 +3,12 @@ import $ from "jquery";
 import "jquery-ui/ui/widgets/dialog";
 import "jquery-ui/themes/base/all.css";
 import { getSessionProjects } from '../services/apiService.js';
+import { useTreeUpdate } from "./TreeUpdateContext";
 
 
 function CreateWellModal ({ isOpen, onClose }) {
+  
+    const { triggerTreeUpdate } = useTreeUpdate();
   
     const apiUrl = process.env.REACT_APP_API_URL;
   
@@ -102,7 +105,8 @@ function CreateWellModal ({ isOpen, onClose }) {
               const result = await response.json();
               if (!response.ok) {
                   throw new Error(result.message || "Failed to add well");
-              }      
+              }
+              triggerTreeUpdate();
               $(this).dialog("close");
               onClose();
               

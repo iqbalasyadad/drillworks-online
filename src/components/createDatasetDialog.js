@@ -3,8 +3,11 @@ import $ from "jquery";
 import "jquery-ui/ui/widgets/dialog";
 import "jquery-ui/themes/base/all.css";
 import { getSessionProjects, getWells, getWellbores} from '../services/apiService.js';
+import { useTreeUpdate } from "./TreeUpdateContext";
 
 function CreateDatasetModal ({ isOpen, onClose }) {
+
+    const { triggerTreeUpdate } = useTreeUpdate();
   
     const apiUrl = process.env.REACT_APP_API_URL;
     
@@ -230,8 +233,9 @@ function CreateDatasetModal ({ isOpen, onClose }) {
       
               const result = await response.json();
               if (!response.ok) {
-                  throw new Error(result.message || "Failed to add well");
-              }      
+                  throw new Error(result.message || "Failed to add dataset");
+              }
+              triggerTreeUpdate();
               $(this).dialog("close");
               onClose();
               
@@ -284,11 +288,11 @@ function CreateDatasetModal ({ isOpen, onClose }) {
 
               <div style={{marginBottom: "10px"}}>
                 <p>Select a target well:</p>
-                <select id="modal-create-dataset-well-target-select" size="8" style={{width: "100%", height: "100px", fontSize:"10pt", padding: "5px"}}></select>
+                <select id="modal-create-dataset-well-target-select" size="8" style={{width: "100%", height: "100px", fontSize:"10pt", padding: "2px"}}></select>
               </div>
               <div>
                 <p>Select a wellbore:</p>
-                <select id="modal-create-dataset-wellbore-target-select" size="8" style={{width: "100%", height: "100px", fontSize:"10pt", padding: "5px"}}></select>
+                <select id="modal-create-dataset-wellbore-target-select" size="8" style={{width: "100%", height: "100px", fontSize:"10pt", padding: "2px"}}></select>
               </div>
 
           </div>
@@ -373,10 +377,11 @@ function CreateDatasetModal ({ isOpen, onClose }) {
                   <tr className="modal-input-table-tr" style={{width:"400px"}}>
                     <td style={{width:"80%"}}><label htmlFor="modal-create-dataset-color-select" className="modal-label-input">Color:</label></td>
                     <td style={{width:"30%"}}>
-                        <select name="modal-create-dataset-color-select" id="modal-create-dataset-color-select">
+                        {/* <select name="modal-create-dataset-color-select" id="modal-create-dataset-color-select">
                           <option value="1">1</option>
                           <option value="2">2</option>
-                        </select>
+                        </select> */}
+                        <input type="color" id="modal-create-dataset-color-select" style={{height:"22px", width:"40px"}}/>
                     </td> 
                   </tr>
                   <tr className="modal-input-table-tr">

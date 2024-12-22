@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import "jquery-ui/ui/widgets/dialog";
 import "jquery-ui/themes/base/all.css";
-
 import { getSessionProjects, getWells, getWellbores, getDatasetsName} from '../services/apiService.js';
+import { useTreeUpdate } from "./TreeUpdateContext";
 
 function DeleteDatasetDialog({ isOpen, onClose }) {
+  
+  const { triggerTreeUpdate } = useTreeUpdate();
 
   const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -116,6 +118,7 @@ function DeleteDatasetDialog({ isOpen, onClose }) {
         throw new Error(result.error || "Failed to delete datasets");
       }
       console.log(result.message);
+      triggerTreeUpdate();
     } catch (error) {
       console.error("Error:", error);
       alert(error.message);
@@ -155,7 +158,6 @@ function DeleteDatasetDialog({ isOpen, onClose }) {
               return;
             }
             deleteDatasets(wellId, datasetsIds);
-
           } catch (error) {
             console.error("Error:", error);
             alert("An error occurred: " + error.message);

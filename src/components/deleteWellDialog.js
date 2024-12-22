@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import "jquery-ui/ui/widgets/dialog";
 import "jquery-ui/themes/base/all.css";
-
 import { getSessionProjects, getWells} from '../services/apiService.js';
+import { useTreeUpdate } from "./TreeUpdateContext";
+
 
 function DeleteWellDialog({ isOpen, onClose }) {
+  
+  const { triggerTreeUpdate } = useTreeUpdate();
 
   const apiUrl = process.env.REACT_APP_API_URL;
   const fetchWells = async () => {
@@ -45,6 +48,7 @@ function DeleteWellDialog({ isOpen, onClose }) {
         throw new Error(result.error || "Failed to delete project");
       }
       console.log(result.message);
+      triggerTreeUpdate();
     } catch (error) {
       console.error("Error:", error);
       alert(error.message);
@@ -74,7 +78,6 @@ function DeleteWellDialog({ isOpen, onClose }) {
             const project_session = await getSessionProjects();
             const projectId = project_session.id;
             deleteWell(projectId, wellId);
-
             console.log("Deleted: ", wellId);
           } catch (error) {
             console.error("Error:", error);
@@ -113,7 +116,7 @@ function DeleteWellDialog({ isOpen, onClose }) {
   return (
     <div id="delete-well-dialog" title="Delete a Well">
       <form>
-        <select id="modal-delete-well-select" size="8" style={{width: "100%", height: "240px", fontSize:"10pt", padding: "5px"}}></select>
+        <select id="modal-delete-well-select" size="8" style={{width: "100%", height: "240px", fontSize:"10pt", padding: "2px"}}></select>
       </form>
     </div>
   );

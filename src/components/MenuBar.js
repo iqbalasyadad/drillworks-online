@@ -23,7 +23,7 @@ import DeleteWellboreDialog from "./deleteWellboreDialog";
 import CreateDatasetModal from "./createDatasetDialog";
 import DeleteDatasetDialog from "./deleteDatasetDialog";
 
-function Menu({ onProjectSelect }) {
+function MenuBar({ onProjectSelect }) {
   const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
 
@@ -256,4 +256,4 @@ function Menu({ onProjectSelect }) {
   );
 }
 
-export default Menu;
+export default MenuBar;

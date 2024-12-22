@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import Menu from "./Menu";
+import MenuBar from "./MenuBar";
 import QuickMenu from "./QuickMenu";
 
 import LeftSidebar from "./LeftSidebar";
 import TracksContainer from "./TracksContainer";
+import { TreeUpdateProvider } from "./TreeUpdateContext";
+
 import "../assets/styles/styles.css";
 import "../assets/styles/track-styles.css";
 
@@ -19,15 +21,17 @@ const DashboardPage = () => {
   
 
   return (
-    <div id="app-container">
-      <Header projectName={selectedProject} />
-      <Menu onProjectSelect={handleProjectSelect} />
-      <QuickMenu/>
-      <div id="project-container">
-        <LeftSidebar selectedProject={selectedProject}/>
-        {/* <TracksContainer /> */}
+    <TreeUpdateProvider>
+      <div id="app-container">
+        <Header project={selectedProject} />
+        <MenuBar onProjectSelect={handleProjectSelect} />
+        <QuickMenu/>
+        <div id="project-container">
+          <LeftSidebar selectedProject={selectedProject}/>
+          {/* <TracksContainer /> */}
+        </div>
       </div>
-    </div>
+    </TreeUpdateProvider>
   );
 }
 

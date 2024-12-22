@@ -104,7 +104,7 @@ function DeleteProjectDialog({ isOpen, onClose }) {
   return (
     <div id="delete-project-dialog" title="Delete a Project">
       <form>
-        <select id="modal-delete-project-select" size="8" style={{width: "100%", height: "240px", fontSize:"10pt", padding: "5px"}}></select>
+        <select id="modal-delete-project-select" size="8" style={{width: "100%", height: "240px", fontSize:"10pt", padding: "2px"}}></select>
         <div style={{marginTop: "10px"}}>
           <input type="checkbox" id="modal-delete-project-delete-wells-checkbox" value="delete-wells" style={{marginRight: "5px"}}></input>
           <label htmlFor="modal-delete-project-delete-wells-checkbox" className="modal-label-input">Delete all wells in this project that are not shared by other projects</label>

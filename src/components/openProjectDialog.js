@@ -95,7 +95,7 @@ function OpenProjectDialog({ isOpen, onClose, onProjectSelect }) {
             width: "100%",
             height: "290px",
             fontSize: "10pt",
-            padding: "5px",
+            padding: "2px",
           }}
         ></select>
       </form>
